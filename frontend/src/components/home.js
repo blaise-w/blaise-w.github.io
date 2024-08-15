@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import '../styles.css';
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
         <section className="text-center">
           <h2>Welcome!</h2>
           <p>Welcome to Study Buddies, the platform to find study partners and form study groups easily. Click the button below to start.</p>
-          <a href="/#/profile" className="btn btn-success mt-3">Get Started</a>
+          <Link to="/profile" className="btn btn-success mt-3">Get Started</Link>  {/* Use Link here */}
         </section>
       </main>
     </div>
