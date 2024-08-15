@@ -8,12 +8,13 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/users/add', {
+      const response = await axios.post('http://localhost:5001/users/add', {
         firstName,
         lastName,
-        availability: 'Sample availability', // Replace with actual data
+        availability: [], // Initially empty; will be set in Schedule page
       });
       console.log('User created:', response.data);
+      window.location.href = '/schedule';
     } catch (error) {
       console.error('Error creating user:', error);
     }

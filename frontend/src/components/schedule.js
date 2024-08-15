@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Calendar from './Calendar';
 
-const Schedule = () => {
+const Schedule = ({ user, setUserAvailability }) => {
+  const [availability, setAvailability] = useState(user ? user.availability : []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setUserAvailability(availability); // Save availability to user's profile
+    window.location.href = '/match'; // Redirect to match page
+  };
+
   return (
     <div className="container mt-4">
       <header className="bg-dark text-white text-center py-5">
@@ -8,17 +17,10 @@ const Schedule = () => {
       </header>
       <section id="schedule-section">
         <h2>Set your availability</h2>
-        <form action="/match">
-          <div className="form-group">
-            <label htmlFor="availability">Select your available times:</label>
-            <textarea id="availability" name="availability" rows="10" className="form-control" placeholder="Enter your available times here..."></textarea>
-          </div>
-          <button type="submit" className="btn btn-primary">Continue</button>
+        <form onSubmit={handleSubmit}>
+          <Calendar availability={availability} setAvailability={setAvailability} />
+          <button type="submit" className="btn btn-primary mt-3">Continue</button>
         </form>
-        <div className="image-container">
-          <img src="/images/userschedule.png" alt="User schedule" className="img-fluid" />
-          <div className="image-caption">User Schedule</div>
-        </div>
       </section>
     </div>
   );
