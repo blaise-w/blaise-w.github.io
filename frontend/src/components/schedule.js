@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory hook
 import Calendar from './Calendar';
 import '../styles.css';
 
 const Schedule = ({ user, setUserAvailability }) => {
   const [availability, setAvailability] = useState(user ? user.availability : []);
+  const history = useHistory(); // Initialize useHistory
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setUserAvailability(availability); // Save availability to user's profile
-    window.location.href = '/#/match'; // Redirect to match page
+    history.push('/match'); // Redirect to match page using history.push
   };
 
   return (
