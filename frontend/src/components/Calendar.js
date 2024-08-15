@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import './styles.css';
+import '../styles.css';
 
 const Calendar = ({ availability, setAvailability }) => {
   const handleDateClick = (info) => {
