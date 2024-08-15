@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles.css';
 
 const Match = () => {
   const [currentUserIndex, setCurrentUserIndex] = useState(0);

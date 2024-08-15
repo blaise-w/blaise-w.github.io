@@ -2,7 +2,7 @@
   "name": "study-buddies-frontend",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "https://blaise-w.github.io/study-buddies",
+  "homepage": "https://blaise-w.github.io/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

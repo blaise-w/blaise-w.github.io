@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Calendar from './Calendar';
+import './styles.css';
 
 const Schedule = ({ user, setUserAvailability }) => {
   const [availability, setAvailability] = useState(user ? user.availability : []);
