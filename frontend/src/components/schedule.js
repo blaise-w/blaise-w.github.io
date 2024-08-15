@@ -8,7 +8,7 @@ const Schedule = ({ user, setUserAvailability }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUserAvailability(availability); // Save availability to user's profile
-    window.location.href = '/match'; // Redirect to match page
+    window.location.href = '/#/match'; // Redirect to match page
   };
 
   return (

@@ -15,7 +15,7 @@ const Profile = () => {
         availability: [], // Initially empty; will be set in Schedule page
       });
       console.log('User created:', response.data);
-      window.location.href = '/schedule';
+      window.location.href = '/#/schedule';
     } catch (error) {
       console.error('Error creating user:', error);
     }
