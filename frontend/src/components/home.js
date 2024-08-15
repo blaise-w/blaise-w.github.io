@@ -17,7 +17,7 @@ const Home = () => {
         <section className="text-center">
           <h2>Welcome!</h2>
           <p>Welcome to Study Buddies, the platform to find study partners and form study groups easily. Click the button below to start.</p>
-          <a href="/profile" className="btn btn-success mt-3">Get Started</a>
+          <a href="/#/profile" className="btn btn-success mt-3">Get Started</a>
         </section>
       </main>
     </div>
