@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory hook
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Calendar from './Calendar';
 import '../styles.css';
 
 const Schedule = ({ user, setUserAvailability }) => {
   const [availability, setAvailability] = useState(user ? user.availability : []);
-  const history = useHistory(); // Initialize useHistory
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setUserAvailability(availability); // Save availability to user's profile
-    history.push('/match'); // Redirect to match page using history.push
+    // No need to redirect here; navigation will be handled by the Link component
   };
 
   return (
@@ -22,7 +21,9 @@ const Schedule = ({ user, setUserAvailability }) => {
         <h2>Set your availability</h2>
         <form onSubmit={handleSubmit}>
           <Calendar availability={availability} setAvailability={setAvailability} />
-          <button type="submit" className="btn btn-primary mt-3">Continue</button>
+          <Link to="/match" className="btn btn-primary mt-3" onClick={handleSubmit}>
+            Continue
+          </Link>
         </form>
       </section>
     </div>
